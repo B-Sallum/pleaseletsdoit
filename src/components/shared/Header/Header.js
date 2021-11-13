@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
   return (
     <nav>
-      <Link to="/"><h1>To Do List</h1></Link>
+      <Link to="/"><h2 className="navTitle">To Do List</h2></Link>
       <Link to="/new"><h2>New task</h2></Link>
     </nav>
   )

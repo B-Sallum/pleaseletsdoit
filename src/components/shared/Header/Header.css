@@ -1,9 +1,12 @@
 nav
 {
+  background-image: linear-gradient(
+    white,
+    #E0E2DB
+  );
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: blueviolet;
+  justify-content: space-evenly;
   height: 3rem;
   width: 100%;
 }
