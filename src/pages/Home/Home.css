@@ -1,4 +1,6 @@
-.home
+.bgHome
 {
   background-image: linear-gradient(white, #E0E2DB);
+  height: 92vh;
+  width: 100vw;
 }
