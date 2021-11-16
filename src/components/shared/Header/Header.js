@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <nav>
       <Link to="/"><h2 className="navTitle">To Do List</h2></Link>
-      <h2>New task</h2>
+      <Link to="/new"><h2 className="navTitle">To Do List</h2></Link>
     </nav>
   )
 }

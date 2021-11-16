@@ -1,17 +1,14 @@
 import React from 'react'
-import './Home.css'
+import './index.css'
 
 const API_URL = 'http://localhost:3001'
 
 const Home = () => {
 
-
-
-
-
-
   return (
-    <div className="bgHome">
+    <div className="bgAll">
+
+      <h1>Heyyy</h1>  
 
     </div>
   )
