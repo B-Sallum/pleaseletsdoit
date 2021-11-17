@@ -1,11 +1,12 @@
 import React from 'react';
+import './Card.css'
 
 const Card = (props) => {
 
   const task = props.data;
 
   return (
-    <div key={task._id}>
+    <div className="card" key={task._id}>
       <div>
         <div>
           <h1>

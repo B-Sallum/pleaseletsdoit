@@ -5,3 +5,10 @@
     #eff1e9
   );
 }
+.container
+{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  padding: 10px;
+}

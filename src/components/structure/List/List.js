@@ -23,10 +23,12 @@ const TaskList = () => {
 
   return (
 
-    <div>
-      {tasks.map((task) => (
-        <Card data={task} key={task._id}/>
-      ))}
+    <div className="container">
+      
+        {tasks.map((task) => (
+          <Card data={task} key={task._id} />
+        ))}
+   
     </div>
 
   )

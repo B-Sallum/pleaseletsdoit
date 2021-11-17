@@ -2,7 +2,9 @@ input
 {
   width: 300px;
 }
-.container
+form
 {
-  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
 }
