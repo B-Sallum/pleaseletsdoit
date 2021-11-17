@@ -1,6 +1,27 @@
 import React from 'react'
 import './New.css'
 
+const API_URL = 'http://localhost:3002';
+
+const addTask = async () => {
+
+  
+
+  // const request = new Request(
+
+  //   API_URL,
+
+  //   {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       title: 
+  //     })
+  //   }
+
+
+  // )
+}
+
 const New = () => {
 
   return (
@@ -12,7 +33,7 @@ const New = () => {
         <input type="text" placeholder="Low, Normal (default) or High Priority?" name="priority" />
         <input type="text" placeholder="'To Do' is Default" name="taskStatus" />
         <input type="date" placeholder="Task Title" name="title" />
-        <button type="submit">Add</button>
+        <button onClick={addTask()}>Add</button>
       </form>
     </div>
   )

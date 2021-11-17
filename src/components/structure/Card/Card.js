@@ -13,6 +13,7 @@ const Card = (props) => {
           </h1>
         </div>
         <div>
+          {task._id}
           {task.details}
         </div>
         <div>
