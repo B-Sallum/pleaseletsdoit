@@ -4,9 +4,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <nav>
-      <Link to="/"><h2 className="footer">To Do List</h2></Link>
-      <h2>New task</h2>
+    <nav className="footer">
+      <Link to="/"><h2>To Do List</h2></Link>
+      <Link to="/new"><h2>To Do List</h2></Link>
     </nav>
   )
 }

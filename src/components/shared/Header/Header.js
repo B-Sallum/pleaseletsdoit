@@ -4,9 +4,9 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <nav>
-      <Link to="/"><h2 className="navTitle">To Do List</h2></Link>
-      <Link to="/new"><h2 className="navTitle">To Do List</h2></Link>
+    <nav className="header">
+      <Link to="/"><h2>To Do List</h2></Link>
+      <Link to="/new"><h2>To Do List</h2></Link>
     </nav>
   )
 }
