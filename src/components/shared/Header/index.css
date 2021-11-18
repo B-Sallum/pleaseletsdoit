@@ -1,0 +1,14 @@
+.navButton
+{
+  background-color: white;
+  border: solid 1px;
+  box-shadow: 2px 2px 7px 2px rgb(63, 63, 63);
+  text-align: center;
+  position: relative;
+  top: 0px;
+  width: 150px;
+}
+.navButton:hover
+{
+  border: solid 3px;
+}
