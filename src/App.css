@@ -9,6 +9,7 @@
   flex-flow: row wrap;
   gap: 10px;
   padding: 10px;
+  min-height: 50vh;
   width: 100%;
 }
 .out

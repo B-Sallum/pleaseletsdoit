@@ -10,9 +10,9 @@ const Card = (props) => {
     <Link to={`/task/${task._id}`} className="card-out">
       <div className="card-in">
         <div>
-          <h1>
+          <h2>
             {task.title}
-          </h1>
+          </h2>
         </div>
         <div>
           {task.details}
