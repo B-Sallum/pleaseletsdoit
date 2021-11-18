@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Api from '../../components/api/'
 import './index.css'
 
+
 const Task = () => {
 
   const [task, setTask] = useState({});
@@ -27,6 +28,15 @@ const Task = () => {
     setTask(taskId)
   }
 
+  
+const deleteTaskById = async () => {
+
+  await Api.fetchDelete(id)
+
+}
+
+  
+
   return (
     <div className="details">
       <div>
@@ -35,7 +45,6 @@ const Task = () => {
         </h1>
       </div>
       <div>
-        {task._id}
         {task.details}
       </div>
       <div>
@@ -49,7 +58,8 @@ const Task = () => {
       </div>
       <div>
         <p>Created at {task.date}</p>
-      </div>      
+      </div>
+      <button onClick={deleteTaskById}>APAGAR</button> 
     </div>
   )
 }

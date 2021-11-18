@@ -1,9 +1,6 @@
 .appBackground
 {
-  background-image: linear-gradient(
-    white,
-    #eff1e9
-  );
+  background-image: url('./components/shared/img/bg.jpg');
 }
 .container
 {

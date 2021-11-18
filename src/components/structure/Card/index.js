@@ -7,8 +7,8 @@ const Card = (props) => {
   const task = props.data;
 
   return (
-    <Link to={`/task/${task._id}`} className="card">
-      <div>
+    <Link to={`/task/${task._id}`} className="card-out">
+      <div className="card-in">
         <div>
           <h1>
             {task.title}

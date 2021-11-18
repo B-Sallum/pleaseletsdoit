@@ -18,7 +18,14 @@ const Api = {
         })
       }
     )
-  }
+  },
+
+  fetchDelete: (id) => fetch(
+    `${Api.apiUrl}/delete/${id}`,
+    {
+      method: 'DELETE'
+    }
+  )
 }
 
 export default Api
