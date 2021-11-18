@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
-
-const API_URL = 'http://localhost:3002';
+import Api from '../../api/api'
 
 const TaskList = () => {
 
@@ -14,7 +13,7 @@ const TaskList = () => {
 
   const getTasks = async () => {
 
-    const request = await fetch (`${API_URL}/tasks`);
+    const request = await Api.fetchGetAll();
 
     const data = await request.json();
 

@@ -1,5 +1,7 @@
 input
 {
+  font-size: 1rem;
+  height: 2rem;
   width: 300px;
 }
 form

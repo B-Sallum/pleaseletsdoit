@@ -1,12 +1,13 @@
 import React from 'react';
 import './Card.css'
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
 
   const task = props.data;
 
   return (
-    <div className="card" key={task._id}>
+    <Link to={`/task/${task._id}`} className="card">
       <div>
         <div>
           <h1>
@@ -31,7 +32,7 @@ const Card = (props) => {
         </div>
 
       </div>
-    </div>
+    </Link>
   )
 }
 
