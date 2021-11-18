@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Api from '../../components/api/'
 import './index.css'
 
 
 const Task = () => {
+
+  const navigate = useNavigate();
 
   const [task, setTask] = useState({});
 
@@ -33,6 +35,8 @@ const deleteTaskById = async () => {
 
   await Api.fetchDelete(id)
 
+  navigate('/')
+
 }
 
   
@@ -59,7 +63,7 @@ const deleteTaskById = async () => {
       <div>
         <p>Created at {task.date}</p>
       </div>
-      <button onClick={deleteTaskById}>APAGAR</button> 
+      <button onClick={deleteTaskById}>DELETE</button>
     </div>
   )
 }

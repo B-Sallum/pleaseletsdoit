@@ -1,8 +1,12 @@
 import React from 'react'
-import './index.css'
+import { useNavigate } from 'react-router-dom';
 import Api from '../../components/api'
+import './index.css'
+
 
 const New = () => {
+
+  const navigate = useNavigate();
 
   const addTask = async (event) => {
 
@@ -24,7 +28,8 @@ const New = () => {
       deadline
     }
 
-    await Api.fetchPost(newTask);  
+    await Api.fetchPost(newTask);
+    navigate('/');
 
   }
 
