@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Api from '../../components/api/api'
+import Api from '../../components/api/'
+import './index.css'
 
 const Task = () => {
 
@@ -8,7 +9,7 @@ const Task = () => {
 
   useEffect(() => {
 
-    getTaskById(id);
+    getTaskById();
 
   }, []);
 
@@ -27,7 +28,7 @@ const Task = () => {
   }
 
   return (
-    <div className="container">
+    <div className="details">
       <div>
         <h1>
           {task.title}

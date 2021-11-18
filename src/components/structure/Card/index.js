@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css'
+import './index.css'
 import { Link } from 'react-router-dom';
 
 const Card = (props) => {
@@ -15,7 +15,6 @@ const Card = (props) => {
           </h1>
         </div>
         <div>
-          {task._id}
           {task.details}
         </div>
         <div>
@@ -26,9 +25,6 @@ const Card = (props) => {
         </div>
         <div>
           {task.deadline}
-        </div>
-        <div>
-          <p>Created at {task.date}</p>
         </div>
 
       </div>

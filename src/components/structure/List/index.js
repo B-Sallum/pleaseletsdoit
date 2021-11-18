@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../Card/Card';
-import Api from '../../api/api'
+import Card from '../Card';
+import Api from '../../api'
 
 const TaskList = () => {
 

@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home/Home';
-import New from './pages/New/New';
-import Task from './pages/Task/Task'
+import Home from './pages/Home/';
+import New from './pages/New/';
+import Task from './pages/Task/'
 import './App.css'
 
 function App() {

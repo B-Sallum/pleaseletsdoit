@@ -1,6 +1,6 @@
 import React from 'react'
-import './New.css'
-import Api from '../../components/api/api'
+import './index.css'
+import Api from '../../components/api'
 
 const New = () => {
 
