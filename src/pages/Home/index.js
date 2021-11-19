@@ -6,7 +6,7 @@ import TaskList from '../../components/structure/List';
 const Home = () => {
 
   return (
-    <div className="container out">
+    <div className="list">
 
       <TaskList />
 

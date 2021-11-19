@@ -1,0 +1,8 @@
+.container
+{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  padding: 30px;
+  transition: ease 1s;
+}
