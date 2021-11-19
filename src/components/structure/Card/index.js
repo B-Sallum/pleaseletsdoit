@@ -6,8 +6,12 @@ const Card = (props) => {
 
   const task = props.data;
 
+  if (task.deadline) {
+    var deadline = task.deadline.slice(0, 10)
+  }
+
   return (
-    <Link to={`/task/${task._id}`} className="card-out">
+    <Link to={`/task/${task._id}`} className={"card-out " + task.priority}>
       <div className="card-in">
         <div>
           <h3>
@@ -15,7 +19,7 @@ const Card = (props) => {
           </h3>
         </div>
         <div>
-          <p>{task.details}</p>
+          <p>{task.details.slice(0, 40)}...</p>
         </div>
         <div>
           {task.priority}
@@ -24,7 +28,7 @@ const Card = (props) => {
           {task.taskStatus}
         </div>
         <div>
-          {task.deadline}
+          {deadline}
         </div>
 
       </div>

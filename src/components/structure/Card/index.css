@@ -1,13 +1,7 @@
 .card-out
 {
   border: solid 2px grey;
-  border-radius: 10px;
-  background-image: linear-gradient(
-    rgba(220, 220, 220, 0.4),
-    rgba(220, 220, 220, 0.6),
-    rgba(220, 220, 220, 0.8),
-    white
-  );
+  border-radius: 15px;
   box-shadow: 2px 2px 10px black;
   width: 200px;
   padding: 10px;
@@ -15,11 +9,26 @@
 }
 .card-out:hover
 {
+  opacity: 1;
+  transition: ease 0.5s;
+}
+.Low
+{
   background-image: linear-gradient(
-    rgba(220, 220, 220, 0.5),
-    rgba(220, 220, 220, 0.7),
-    rgba(220, 220, 220, 0.9),
+    rgba(220, 220, 220, 0.4),
+    rgba(220, 220, 220, 0.6),
+    rgba(220, 220, 220, 0.8),
     white
   );
-  transition: ease 0.5s;
+  opacity: 0.9;
+}
+.Medium
+{
+  background-image: linear-gradient(
+    rgba(207, 152, 0, 0.4),
+    rgba(207, 152, 0, 0.6),
+    rgba(207, 152, 0, 0.8),
+    rgb(207, 152, 0)
+  );
+  opacity: 0.9;
 }
