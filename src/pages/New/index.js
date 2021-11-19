@@ -1,4 +1,5 @@
 import React from 'react'
+import Messenger from '../../components/structure/Messenger'
 import { useNavigate } from 'react-router-dom';
 import Api from '../../components/api'
 import './index.css'
@@ -11,8 +12,6 @@ const New = () => {
   const addTask = async (event) => {
 
     event.preventDefault();
-
-    console.log(event.target.title.value)
   
     const title = event.target.title.value;
     const details = event.target.details.value;
@@ -28,7 +27,24 @@ const New = () => {
       deadline
     }
 
-    await Api.fetchPost(newTask);
+    const request = await Api.fetchPost(newTask);
+
+    const { message } = await request.json();
+
+    console.log(message)
+
+    Messenger(message)
+
+    // try {
+    //   const response = await Api.fetchPost(newTask);
+    //   console.log(response)
+    // }
+    // catch (error) {
+    //   console.log(error)
+    // }
+
+    if (!title) {return}
+
     navigate('/');
 
   }

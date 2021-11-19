@@ -6,6 +6,21 @@ const Api = {
 
   fetchGetById: (id) => fetch(`${Api.apiUrl}/task/${id}`),
 
+  // fetchPost: (req, res) => {
+
+  //     fetch(
+  //       `${Api.apiUrl}/new`,
+  //       {
+  //         method: 'POST',
+  //         body: JSON.stringify(req),
+  //         headers: new Headers({
+  //           "Content-Type": "application/json"
+  //         })
+  //       }
+  //     )
+  //     .then
+  // },
+
   fetchPost: (data) => {
 
     return fetch(
