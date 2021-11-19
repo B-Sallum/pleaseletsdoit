@@ -9,6 +9,9 @@ const Card = (props) => {
   if (task.deadline) {
     var deadline = task.deadline.slice(0, 10)
   }
+  if (task.details) {
+    var details = task.details.slice(0, 40)
+  }
 
   return (
     <Link to={`/task/${task._id}`} className={"card-out " + task.priority}>
@@ -19,7 +22,7 @@ const Card = (props) => {
           </h3>
         </div>
         <div>
-          <p>{task.details.slice(0, 40)}...</p>
+          <p>{details}</p>
         </div>
         <div>
           {task.priority}
