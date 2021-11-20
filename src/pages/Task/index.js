@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
+import New from '../../pages/New'
 import Api from '../../components/api/'
 import './index.css'
-
 
 const Task = () => {
 
@@ -29,41 +29,43 @@ const Task = () => {
 
     setTask(taskId)
   }
-
   
-const deleteTaskById = async () => {
+  const deleteTaskById = async () => {
 
-  await Api.fetchDelete(id)
+    await Api.fetchDelete(id)
 
-  navigate('/')
+    navigate('/')
 
-}
-
-  
+  }
 
   return (
-    <div className="details">
-      <div>
-        <h1>
-          {task.title}
-        </h1>
+    <div className="container">
+    <div className={"card-out details " + task.priority}>
+      <div className="card-in">
+        <div>
+          <h2>
+           {task.title}
+          </h2>
+        </div>
+        <div>
+          {task.details}
+        </div>
+        <div>
+          {task.priority}
+        </div>
+        <div>
+          {task.taskStatus}
+        </div>
+        <div>
+          {task.deadline}
+        </div>
+        <div>
+          <p>Created at {task.date}</p>
+        </div>
+        <Link to={`/edit/${task._id}`}><button >EDIT</button></Link>
+        <button onClick={deleteTaskById}>DELETE</button>
       </div>
-      <div>
-        {task.details}
-      </div>
-      <div>
-        {task.priority}
-      </div>
-      <div>
-        {task.taskStatus}
-      </div>
-      <div>
-        {task.deadline}
-      </div>
-      <div>
-        <p>Created at {task.date}</p>
-      </div>
-      <button onClick={deleteTaskById}>DELETE</button>
+    </div>
     </div>
   )
 }
