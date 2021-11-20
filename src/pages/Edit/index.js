@@ -60,7 +60,11 @@ const Edit = () => {
         <form onSubmit={editTask}>
           <input id="title" value={task.title} onChange={handleFields} type="text" placeholder="Task Title" name="title" />
           <input id="details" value={task.details} onChange={handleFields} type="text" placeholder="Enter some details" name="details" />
-          <input id="priority" value={task.priority} onChange={handleFields} type="text" placeholder="Low, Normal (default) or High Priority?" name="priority" />
+          <select id="priority" value={task.priority} onChange={handleFields} type="text" name="priority">
+            <option value="Low">Low</option>
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+          </select>
           <input id="taskStatus" value={task.taskStatus} onChange={handleFields} type="text" placeholder="'To Do' is Default" name="taskStatus" />
           <input id="deadline" value={deadline} onChange={handleFields} type="date" placeholder="Task Title" name="deadline" />
           <button type="submit">EDIT</button>

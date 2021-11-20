@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Messenger from '../../components/structure/Messenger'
 import { useNavigate } from 'react-router-dom';
 import Api from '../../components/api'
 import './index.css'
-
 
 const New = () => {
 
@@ -49,14 +48,26 @@ const New = () => {
 
   }
 
+  const [priorityState, setPriority] = useState('Normal');
+
+  const handleChange = (event) => {
+    const newPriority = event.target.value;
+    setPriority(newPriority)
+  }
+
+
   return (
     <div className="container">
-      <div className="card-out edit">
+      <div className={"card-out edit " + priorityState}>
         <h1>Let's Add a Task!</h1>
         <form onSubmit={addTask}>
           <input type="text" placeholder="Task Title" name="title" />
           <input type="text" placeholder="Enter some details" name="details" />
-          <input type="text" placeholder="Low, Normal (default) or High Priority?" name="priority" />
+          <select id="priority" defaultValue={priorityState} type="text" name="priority" onChange={handleChange}>
+            <option value="Low">Low</option>
+            <option value="Normal">Normal</option>
+            <option value="High">High</option>
+          </select>
           <input type="text" placeholder="'To Do' is Default" name="taskStatus" />
           <input type="date" placeholder="Task Title" name="deadline" />
           <button type="submit">Add</button>
