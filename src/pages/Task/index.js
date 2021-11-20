@@ -38,6 +38,14 @@ const Task = () => {
 
   }
 
+  if (task.deadline) {
+    var deadline = task.deadline.slice(0, 10)
+  }
+
+  if (task.date) {
+    var date = task.date.slice(0, 10)
+  }
+
   return (
     <div className="container">
     <div className={"card-out details " + task.priority}>
@@ -57,10 +65,10 @@ const Task = () => {
           {task.taskStatus}
         </div>
         <div>
-          {task.deadline}
+          {deadline}
         </div>
         <div>
-          <p>Created at {task.date}</p>
+          <p>Created {date}</p>
         </div>
         <Link to={`/edit/${task._id}`}><button >EDIT</button></Link>
         <button onClick={deleteTaskById}>DELETE</button>

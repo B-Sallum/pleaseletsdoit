@@ -35,6 +35,19 @@ const Api = {
     )
   },
 
+  fetchPut: (task, id) => {
+    return fetch(
+      `${Api.apiUrl}/edit/${id}`,
+      {
+        method: 'PUT',
+        body: JSON.stringify(task),
+        headers: new Headers({
+          "Content-Type": "application/json"
+        })
+      }
+    )
+  },
+
   fetchDelete: (id) => fetch(
     `${Api.apiUrl}/delete/${id}`,
     {
