@@ -1,13 +1,13 @@
 import React from 'react';
-import './index.css';
 import { Link } from 'react-router-dom';
+import home from '../img/list.png'
+import newTask from '../img/new.png'
 
 const Footer = () => {
   return (
     <footer>
-      <div className="navButton">
-        <Link to="/new"><h2>New Task</h2></Link>
-      </div>
+        <Link to="/"><button><img src={home} alt="home" /></button></Link>
+        <Link to="/new"><button><img src={newTask} alt="home" /></button></Link>
     </footer>
   )
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css';
 
 const Header = () => {
   return (
     <header>
-      <div className="navButton">
-        <Link to="/"><h2>To Do List</h2></Link>
+      <div>
+        <Link to="/"><button>To Do List</button></Link>
+      </div>
+      <div>
+        <Link to="/new"><button>New Task</button></Link>
       </div>
     </header>
   )
