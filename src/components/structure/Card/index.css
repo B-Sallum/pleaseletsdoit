@@ -15,21 +15,21 @@
 {
   background-image: linear-gradient(
     rgb(5, 155, 0),
-    rgba(5, 155, 0, 0.6)
+    rgba(5, 155, 0, 0.8)
   );
 }
 .Normal
 {
   background-image: linear-gradient(
-    white,
-    rgba(220, 220, 220, 0.6)
+    rgb(220, 220, 220),
+    rgba(220, 220, 220, 0.8)
   );
 }
 .High
 {
   background-image: linear-gradient(
     rgb(207, 152, 0),
-    rgba(207, 152, 0, 0.6)
+    rgba(207, 152, 0, 0.8)
   );
 }
 .edit

@@ -7,7 +7,7 @@ header div
 }
 header button
 {
-  background-color: white;
+  background-color: rgb(220, 220, 220);
   border-radius: 5px 15px 5px 15px;
   box-shadow: 2px 2px 7px 2px rgb(63, 63, 63);
   color: inherit;
@@ -38,6 +38,7 @@ header button:active
 }
 footer button
 {
+  background-color: rgb(220, 220, 220);
   cursor: pointer;
   height: 3.5rem;
   width: 50%;
