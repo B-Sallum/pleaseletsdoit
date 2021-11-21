@@ -3,9 +3,9 @@ import './index.css';
 
 const Footer = () => {
   return (
-    <nav className="footer">
-
-    </nav>
+    <footer>
+      
+    </footer>
   )
 }
 

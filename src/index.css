@@ -3,11 +3,13 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  color: black;
+  color: rgb(104, 94, 94);
   text-decoration: none;
 }
 body
 {
+  background-image: url('./components/shared/img/bg.png');
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -19,18 +21,20 @@ code
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-nav
+header, footer
 {
   background-image:linear-gradient(
     transparent,
     rgb(220, 220, 220)
   );
-  -moz-box-shadow:    inset 0px 0px 2px 2px rgba(144, 144, 144, 0.5);
-  -webkit-box-shadow: inset 0px 0px 2px 2px rgba(144, 144, 144, 0.5);
-  box-shadow:         inset 0px 0px 2px 2px rgba(144, 144, 144, 0.5);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   height: 3.5rem;
   width: 100%;
+}
+footer
+{
+  position: fixed;
+  bottom: 0px;
 }

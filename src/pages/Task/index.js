@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import New from '../../pages/New'
 import Api from '../../components/api/'
 import './index.css'
 
@@ -48,7 +47,7 @@ const Task = () => {
 
   return (
     <div className="container">
-    <div className={"card-out details " + task.priority}>
+    <div className={"card-out details edit " + task.priority}>
       <div className="card-in">
         <div>
           <h2>

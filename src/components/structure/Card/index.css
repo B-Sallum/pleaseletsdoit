@@ -9,25 +9,26 @@
 }
 .card-out:hover
 {
+  box-shadow: 0 0 5px 0px goldenrod;
   opacity: 1;
   transition: ease 0.5s;
 }
 .Low
 {
   background-image: linear-gradient(
-    rgba(5, 155, 0, 0.4),
-    rgba(5, 155, 0, 0.6),
+    rgb(5, 155, 0),
+    rgba(5, 155, 0, 0.9),
     rgba(5, 155, 0, 0.8),
-    rgb(5, 155, 0)
+    rgba(5, 155, 0, 0.6)
   );
   opacity: 0.9;
 }
 .Normal
 {
   background-image: linear-gradient(
-    rgba(220, 220, 220, 0.4),
-    rgba(220, 220, 220, 0.6),
+    rgba(220, 220, 220, 0.9),
     rgba(220, 220, 220, 0.8),
+    rgba(220, 220, 220, 0.6),
     white
   );
   opacity: 0.9;
@@ -35,10 +36,10 @@
 .High
 {
   background-image: linear-gradient(
-    rgba(207, 152, 0, 0.4),
-    rgba(207, 152, 0, 0.6),
+    rgb(207, 152, 0),
+    rgba(207, 152, 0, 0.9),
     rgba(207, 152, 0, 0.8),
-    rgb(207, 152, 0)
+    rgba(207, 152, 0, 0.6)
   );
   opacity: 0.9;
 }
