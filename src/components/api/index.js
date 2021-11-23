@@ -1,6 +1,6 @@
 const Api = {
 
-  apiUrl: 'http://localhost:3002',
+  apiUrl: 'https://backend-pleaseletsdoit.herokuapp.com',
 
   fetchGetAll: () => fetch(`${Api.apiUrl}/tasks`),
 
