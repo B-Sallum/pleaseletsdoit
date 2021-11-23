@@ -28,6 +28,8 @@ const Edit = () => {
 
   };
 
+  const [editButton, setButton] = useState('disabled');
+
   const handleFields = (event) => {
 
     const taskEdit = { ...task };
@@ -35,6 +37,12 @@ const Edit = () => {
     taskEdit[event.target.name] = event.target.value;
 
     setTask(taskEdit);
+
+    if (event.target.value) {
+      setButton('')
+    } else {
+      setButton('disabled')
+    }
 
   }
 
@@ -45,6 +53,9 @@ const Edit = () => {
     const request = await Api.fetchPut(task, id);
     const response = await request.json();
     alert(response.message)
+
+    if (request.status !== 200) {return}   
+
     navigate(`/task/${id}`)
 
   };
@@ -52,6 +63,16 @@ const Edit = () => {
   if (task.deadline) {
     var deadline = task.deadline.slice(0, 10)
   }
+
+  // const [addButton, setButton] = useState('disabled');
+
+  // const changeButton = (event) => {
+  //   if (event.target.value) {
+  //     setButton('')
+  //   } else {
+  //     setButton('disabled')
+  //   }
+  // }
 
   return (
     <div className="container">
@@ -67,7 +88,9 @@ const Edit = () => {
           </select>
           <input id="taskStatus" value={task.taskStatus} onChange={handleFields} type="text" placeholder="'To Do' is Default" name="taskStatus" />
           <input id="deadline" value={deadline} onChange={handleFields} type="date" placeholder="Task Title" name="deadline" />
-          <button type="submit">EDIT</button>
+          <div className="addTask">
+            <button id="addTask" type="submit" disabled={editButton}>Edit</button>
+          </div>
         </form>
       </div>
     </div>

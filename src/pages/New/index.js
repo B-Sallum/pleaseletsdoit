@@ -34,14 +34,6 @@ const New = () => {
 
     Messenger(message)
 
-    // try {
-    //   const response = await Api.fetchPost(newTask);
-    //   console.log(response)
-    // }
-    // catch (error) {
-    //   console.log(error)
-    // }
-
     if (!title) {return}
 
     navigate('/');
@@ -55,22 +47,43 @@ const New = () => {
     setPriority(newPriority)
   }
 
+  const [addButton, setButton] = useState('disabled');
+
+  const changeButton = (event) => {
+    if (event.target.value) {
+      setButton('')
+    } else {
+      setButton('disabled')
+    }
+  }
 
   return (
     <div className="container">
       <div className={"card-out edit " + priorityState}>
         <h1>Let's Add a Task!</h1>
         <form onSubmit={addTask}>
-          <input type="text" placeholder="Task Title" name="title" />
+          <input type="text" placeholder="Task Title" name="title" onChange={changeButton} />
           <input type="text" placeholder="Enter some details" name="details" />
-          <select id="priority" defaultValue={priorityState} type="text" name="priority" onChange={handleChange}>
-            <option value="Low">Low</option>
-            <option value="Normal">Normal</option>
-            <option value="High">High</option>
-          </select>
-          <input type="text" placeholder="'To Do' is Default" name="taskStatus" />
+          <div className="addPriority">
+            <h3>Priority: </h3>
+            <select id="priority" defaultValue={priorityState} type="text" name="priority" onChange={handleChange}>
+              <option value="Low">Low</option>
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div className="addStatus">
+            <h3>Status: </h3>
+            <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus">
+              <option value="Just a note">Just a note</option>
+              <option value="To do">To do</option>
+              <option value="High">High</option>
+            </select>
+          </div>
           <input type="date" placeholder="Task Title" name="deadline" />
-          <button type="submit">Add</button>
+          <div className="addTask">
+            <button id="addTask" type="submit" disabled={addButton}>Add</button>
+          </div>
         </form>
       </div>
 

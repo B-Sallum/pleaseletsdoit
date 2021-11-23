@@ -4,11 +4,28 @@ input
   font-size: 1.2rem;
   height: 2rem;
   padding: 7px;
-  width: 300px;
 }
 form
 {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
   gap: 10px;
+}
+form select
+{
+  width: 250px;
+}
+.addTask
+{
+  text-align: center;
+}
+#addTask
+{
+  height: 50px;
+  width: 200px;
+}
+.addPriority, .addStatus
+{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
