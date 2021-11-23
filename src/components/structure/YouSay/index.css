@@ -1,0 +1,12 @@
+.centerMe
+{
+  text-align: center;
+}
+.messenger
+{
+  position: absolute;
+  bottom: 4rem;
+  width: 250px;
+  height: 200px;
+  background-color: rgba(200, 200, 200, 1);
+}

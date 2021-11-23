@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Messenger from '../../components/structure/Messenger'
+import YouSay from '../../components/structure/YouSay'
 import { useNavigate } from 'react-router-dom';
 import Api from '../../components/api'
 import './index.css'
@@ -27,33 +27,36 @@ const New = () => {
     }
 
     const request = await Api.fetchPost(newTask);
-
     const { message } = await request.json();
-
-    console.log(message)
-
-    Messenger(message)
-
-    if (!title) {return}
-
+    YouSay(message);
+    if (!title) {return};
     navigate('/');
-
-  }
+  };
 
   const [priorityState, setPriority] = useState('Normal');
-
   const handleChange = (event) => {
     const newPriority = event.target.value;
     setPriority(newPriority)
   }
 
   const [addButton, setButton] = useState('disabled');
-
   const changeButton = (event) => {
+
     if (event.target.value) {
       setButton('')
     } else {
       setButton('disabled')
+    }
+  }
+
+  const [ifIsJustANote, setCalendar] = useState('disabled');
+  const bringMeSomeDate = (event) => {
+
+    if (event.target.value == 'Just a note') {
+      setCalendar('disabled');
+    }
+    if (event.target.value == 'To do') {
+      setCalendar('');
     }
   }
 
@@ -74,12 +77,12 @@ const New = () => {
           </div>
           <div className="addStatus">
             <h3>Status: </h3>
-            <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus">
+            <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus" onChange={bringMeSomeDate}>
               <option value="Just a note">Just a note</option>
               <option value="To do">To do</option>
             </select>
           </div>
-          <input type="date" placeholder="Task Title" name="deadline" />
+          <input type="date" placeholder="Task Title" name="deadline" disabled={ifIsJustANote} />
           <div className="addTask">
             <button id="addTask" type="submit" disabled={addButton}>Add</button>
           </div>

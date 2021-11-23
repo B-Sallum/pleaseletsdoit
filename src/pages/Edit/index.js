@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import Api from '../../components/api'
-import Messenger from '../../components/structure/Messenger'
+import YouSay from '../../components/structure/YouSay'
 
 const Edit = () => {
 
@@ -55,7 +55,7 @@ const Edit = () => {
     const request = await Api.fetchPut(task, id);
     const response = await request.json();
 
-    Messenger(response.message)
+    YouSay(response.message)
 
     if (request.status !== 200) {return}   
 
@@ -74,11 +74,14 @@ const Edit = () => {
         <form onSubmit={editTask}>
           <input id="title" value={task.title} onChange={handleFields} type="text" placeholder="Task Title" name="title" />
           <input id="details" value={task.details} onChange={handleFields} type="text" placeholder="Enter some details" name="details" />
-          <select id="priority" value={task.priority} onChange={handleFields} type="text" name="priority">
-            <option value="Low">Low</option>
-            <option value="Normal">Normal</option>
-            <option value="High">High</option>
-          </select>
+          <div className="addPriority">
+            <h3>Priority: </h3>
+            <select id="priority" value={task.priority} onChange={handleFields} type="text" name="priority">
+              <option value="Low">Low</option>
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+            </select>
+          </div>
           <div className="addStatus">
             <h3>Status: </h3>
             <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus" onChange={handleFields}>
