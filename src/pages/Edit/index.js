@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import Api from '../../components/api'
+import Messenger from '../../components/structure/Messenger'
 
 const Edit = () => {
 
   const navigate = useNavigate();
+
+  const [editButton, setButton] = useState('');
 
   const [task, setTask] = useState({
     title: '',
@@ -28,8 +31,6 @@ const Edit = () => {
 
   };
 
-  const [editButton, setButton] = useState('disabled');
-
   const handleFields = (event) => {
 
     const taskEdit = { ...task };
@@ -38,21 +39,23 @@ const Edit = () => {
 
     setTask(taskEdit);
 
-    if (event.target.value) {
-      setButton('')
-    } else {
-      setButton('disabled')
+    if (event.target.name == 'title') {
+      if(!event.target.value) {
+        setButton('disabled');
+      } else {
+        setButton('');
+      }
     }
 
   }
-
 
   const editTask = async (event) => {
 
     event.preventDefault();
     const request = await Api.fetchPut(task, id);
     const response = await request.json();
-    alert(response.message)
+
+    Messenger(response.message)
 
     if (request.status !== 200) {return}   
 
@@ -63,16 +66,6 @@ const Edit = () => {
   if (task.deadline) {
     var deadline = task.deadline.slice(0, 10)
   }
-
-  // const [addButton, setButton] = useState('disabled');
-
-  // const changeButton = (event) => {
-  //   if (event.target.value) {
-  //     setButton('')
-  //   } else {
-  //     setButton('disabled')
-  //   }
-  // }
 
   return (
     <div className="container">
@@ -86,7 +79,13 @@ const Edit = () => {
             <option value="Normal">Normal</option>
             <option value="High">High</option>
           </select>
-          <input id="taskStatus" value={task.taskStatus} onChange={handleFields} type="text" placeholder="'To Do' is Default" name="taskStatus" />
+          <div className="addStatus">
+            <h3>Status: </h3>
+            <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus" onChange={handleFields}>
+              <option value="Just a note">Just a note</option>
+              <option value="To do">To do</option>
+            </select>
+          </div>
           <input id="deadline" value={deadline} onChange={handleFields} type="date" placeholder="Task Title" name="deadline" />
           <div className="addTask">
             <button id="addTask" type="submit" disabled={editButton}>Edit</button>
@@ -98,3 +97,4 @@ const Edit = () => {
 }
 
 export default Edit
+

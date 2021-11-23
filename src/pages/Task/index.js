@@ -69,8 +69,8 @@ const Task = () => {
         <div>
           <p>Created {date}</p>
         </div>
-        <Link to={`/edit/${task._id}`}><button >EDIT</button></Link>
-        <button onClick={deleteTaskById}>DELETE</button>
+        <Link to={`/edit/${task._id}`}><button id="addTask">EDIT</button></Link>
+        <button id="addTask" onClick={deleteTaskById}>DELETE</button>
       </div>
     </div>
     </div>

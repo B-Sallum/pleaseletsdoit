@@ -20,8 +20,20 @@ form select
 }
 #addTask
 {
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
   height: 50px;
   width: 200px;
+  opacity: 0.9;
+}
+#addTask:hover
+{
+  opacity: 1;
+}
+#addTask:disabled
+{
+  cursor: not-allowed;
 }
 .addPriority, .addStatus
 {

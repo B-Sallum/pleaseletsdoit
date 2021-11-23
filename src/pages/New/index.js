@@ -77,7 +77,6 @@ const New = () => {
             <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus">
               <option value="Just a note">Just a note</option>
               <option value="To do">To do</option>
-              <option value="High">High</option>
             </select>
           </div>
           <input type="date" placeholder="Task Title" name="deadline" />
