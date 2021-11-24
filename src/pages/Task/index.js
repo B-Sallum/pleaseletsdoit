@@ -52,10 +52,10 @@ const Task = () => {
           {task.details}
         </div>
         <div>
-          {task.priority}
+          <h4>{task.priority}</h4>
         </div>
         <div>
-          Status: {task.done}
+          <h4>Status: {task.done}</h4>
         </div>
         <div>
           Deadline: {deadline}

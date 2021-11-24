@@ -29,10 +29,10 @@ const Card = (props) => {
           <p>{details}</p>
         </div>
         <div>
-          {task.priority}
+          <h4>Priority: {task.priority}</h4>
         </div>
         <div>
-          {task.done}
+          <h4>Status: {task.done}</h4>
         </div>
         <div>
           {deadline}
