@@ -10,10 +10,6 @@ const Card = (props) => {
   if (task.deadline) {
     var deadline = task.deadline.slice(0, 10)
   }
-  if (task.details) {
-    var details = task.details.slice(0, 40)
-  }
-
 
   return (
     <div className={"card-out " + task.priority}>
@@ -26,7 +22,7 @@ const Card = (props) => {
         </div>
       </Link>
         <div>
-          <p>{details}</p>
+          <p>{task.details}</p>
         </div>
         <div>
           <h4>Priority: {task.priority}</h4>
