@@ -41,7 +41,7 @@ const Task = () => {
 
   return (
     <div className="container">
-    <div className={"card-out details edit " + task.priority}>
+    <div className={"card-out edit " + task.priority}>
       <div className="card-in">
         <div>
           <h2>
@@ -55,13 +55,13 @@ const Task = () => {
           {task.priority}
         </div>
         <div>
-          {task.taskStatus}
+          Status: {task.done}
         </div>
         <div>
-          {deadline}
+          Deadline: {deadline}
         </div>
         <div>
-          <p>Created {date}</p>
+          <p>Created: {date}</p>
         </div>
         <Link to={`/edit/${task._id}`}><button id="addTask">EDIT</button></Link>
         <button id="addTask" onClick={deleteTaskById}>DELETE</button>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Card = (props) => {
 
+
   const task = props.data;
 
   if (task.deadline) {
@@ -13,14 +14,17 @@ const Card = (props) => {
     var details = task.details.slice(0, 40)
   }
 
+
   return (
-    <Link to={`/task/${task._id}`} className={"card-out " + task.priority}>
+    <div className={"card-out " + task.priority}>
       <div className="card-in">
+      <Link to={`/task/${task._id}`}>
         <div>
           <h3>
             {task.title}
           </h3>
         </div>
+      </Link>
         <div>
           <p>{details}</p>
         </div>
@@ -33,9 +37,8 @@ const Card = (props) => {
         <div>
           {deadline}
         </div>
-
       </div>
-    </Link>
+    </div>
   )
 }
 
