@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import Api from '../../components/api/'
 import './index.css'
+import YouSay from '../../components/structure/YouSay'
 
 const Task = () => {
 
@@ -10,40 +11,33 @@ const Task = () => {
   const [task, setTask] = useState({});
 
   useEffect(() => {
-
     getTaskById();
-
   }, []);
 
   const { id } = useParams();
 
-  // const params = useParams();
-  // const id = params.id;
-
   const getTaskById = async () => {
 
     const request = await Api.fetchGetById(id);
-
     const taskId = await request.json();
-
-    setTask(taskId)
-  }
+    setTask(taskId);
+  };
   
   const deleteTaskById = async () => {
 
-    await Api.fetchDelete(id)
-
-    navigate('/')
-
-  }
+    const request = await Api.fetchDelete(id);
+    const response = await request.json();
+    YouSay(response.message);
+    navigate('/');
+  };
 
   if (task.deadline) {
     var deadline = task.deadline.slice(0, 10)
-  }
+  };
 
   if (task.date) {
     var date = task.date.slice(0, 10)
-  }
+  };
 
   return (
     <div className="container">
@@ -75,6 +69,6 @@ const Task = () => {
     </div>
     </div>
   )
-}
+};
 
 export default Task

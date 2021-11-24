@@ -28,7 +28,7 @@ const Card = (props) => {
           {task.priority}
         </div>
         <div>
-          {task.taskStatus}
+          {task.done}
         </div>
         <div>
           {deadline}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const YouSay = (data, confirm) => {
+const YouSay = (data) => {
   return (
     alert(data)
   )

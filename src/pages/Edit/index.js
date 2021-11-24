@@ -7,13 +7,13 @@ const Edit = () => {
 
   const navigate = useNavigate();
 
-  const [editButton, setButton] = useState('');
+  const [editButton, setAddButton] = useState('');
 
   const [task, setTask] = useState({
     title: '',
     details: '',
     priority: '',
-    taskStatus: '',
+    done: '',
     deadline: ''
   });
 
@@ -22,32 +22,28 @@ const Edit = () => {
   }, []);
 
   const { id } = useParams();
-
+  
   const getTaskById = async () => {
 
     const request = await Api.fetchGetById(id);
     const task = await request.json();
-    setTask(task)
-
+    setTask(task);
   };
 
   const handleFields = (event) => {
 
     const taskEdit = { ...task };
-
     taskEdit[event.target.name] = event.target.value;
-
     setTask(taskEdit);
 
-    if (event.target.name == 'title') {
+    if (event.target.name === 'title') {
       if(!event.target.value) {
-        setButton('disabled');
+        setAddButton('disabled');
       } else {
-        setButton('');
-      }
-    }
-
-  }
+        setAddButton('');
+      };
+    };
+  };
 
   const editTask = async (event) => {
 
@@ -55,17 +51,14 @@ const Edit = () => {
     const request = await Api.fetchPut(task, id);
     const response = await request.json();
 
-    YouSay(response.message)
-
-    if (request.status !== 200) {return}   
-
-    navigate(`/task/${id}`)
-
+    YouSay(response.message);
+    if (request.status !== 200) {return};
+    navigate(`/task/${id}`);
   };
 
   if (task.deadline) {
-    var deadline = task.deadline.slice(0, 10)
-  }
+    var deadline = task.deadline.slice(0, 10);
+  };
 
   return (
     <div className="container">
@@ -84,9 +77,9 @@ const Edit = () => {
           </div>
           <div className="addStatus">
             <h3>Status: </h3>
-            <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus" onChange={handleFields}>
-              <option value="Just a note">Just a note</option>
-              <option value="To do">To do</option>
+            <select id="done" value={task.done} type="text" name="done" onChange={handleFields}>
+              <option value="To Do">To Do</option>
+              <option value="Done">Done</option>
             </select>
           </div>
           <input id="deadline" value={deadline} onChange={handleFields} type="date" placeholder="Task Title" name="deadline" />
@@ -96,8 +89,7 @@ const Edit = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Edit
-

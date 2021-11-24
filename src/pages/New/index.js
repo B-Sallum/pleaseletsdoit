@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import YouSay from '../../components/structure/YouSay'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import Api from '../../components/api'
 import './index.css'
 
@@ -15,21 +15,18 @@ const New = () => {
     const title = event.target.title.value;
     const details = event.target.details.value;
     const priority = event.target.priority.value;
-    const taskStatus = event.target.taskStatus.value;
+    const done = event.target.done.value;
     const deadline = event.target.deadline.value;
-
     let newTask = {
       title,
       details,
       priority,
-      taskStatus,
+      done,
       deadline
     }
-
     const request = await Api.fetchPost(newTask);
     const { message } = await request.json();
     YouSay(message);
-    if (!title) {return};
     navigate('/');
   };
 
@@ -46,17 +43,6 @@ const New = () => {
       setButton('')
     } else {
       setButton('disabled')
-    }
-  }
-
-  const [ifIsJustANote, setCalendar] = useState('disabled');
-  const bringMeSomeDate = (event) => {
-
-    if (event.target.value == 'Just a note') {
-      setCalendar('disabled');
-    }
-    if (event.target.value == 'To do') {
-      setCalendar('');
     }
   }
 
@@ -77,21 +63,19 @@ const New = () => {
           </div>
           <div className="addStatus">
             <h3>Status: </h3>
-            <select id="taskStatus" defaultValue="Just a note" type="text" name="taskStatus" onChange={bringMeSomeDate}>
-              <option value="Just a note">Just a note</option>
-              <option value="To do">To do</option>
+            <select id="done" defaultValue="To Do" type="text" name="done">
+              <option value="To Do">To Do</option>
+              <option value="Done">Done</option>
             </select>
           </div>
-          <input type="date" placeholder="Task Title" name="deadline" disabled={ifIsJustANote} />
+          <input type="date" placeholder="Task Title" name="deadline" />
           <div className="addTask">
             <button id="addTask" type="submit" disabled={addButton}>Add</button>
           </div>
         </form>
       </div>
-
     </div>
   )
-
 }
 
 export default New;
